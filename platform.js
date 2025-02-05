@@ -6,11 +6,11 @@ export default class Platform {
         this.height = 15;
         this.speed = 0;
         this.brittle = random() < 0.3;
-        this.broken = false;
+        this.brittle = false;
 
 
      
-        if (random() < 0.9) {
+        if (random() < 0.3) {
             this.brittle = true;
         } else {
             this.brittle = false;

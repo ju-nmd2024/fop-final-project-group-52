@@ -6,18 +6,18 @@ let gap;
 let score = 0;
 let platforms = [];
 let state = "start";
-let survivalTime = 0; // New variable to track time survived
+let survivalTime = 0; 
 
 function setup() {
   createCanvas(500, 650);
 
     
-  bollObj = new doodler(200,600);
+  bollObj = new doodler(200,350);
 
   let numbPlatforms = 6;
     gap = height / numbPlatforms;
     for (let i = 1; i < 6; i++) {
-      let breakable = random() < 0.3;
+      let brittle = random() < 0.3;
       platforms.push(new Platform(random(width), height - i*gap));     
     }
 }
@@ -39,7 +39,8 @@ function gameScreen() {
   
   
   bollObj.draw();
-  
+
+
 
 
   cameraDown();
@@ -96,8 +97,10 @@ function resultScreen() {
 
   if (keyIsDown(ENTER)) {
     state = "game";
-    bollObj = new doodler(200, 600); 
+    bollObj = new doodler(200, 350); 
     score = 0;
+    survivalTime = 0;
+    scoreMultiplier = 1;
     platforms = []; 
 
     
