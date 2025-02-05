@@ -6,6 +6,7 @@ let gap;
 let score = 0;
 let platforms = [];
 let state = "start";
+let survivalTime = 0; 
 
 function setup() {
   createCanvas(500, 650);
@@ -49,9 +50,9 @@ function gameScreen() {
   }
 
   
-  if (bollObj.velocity < 0) { 
-    score += Math.abs(bollObj.velocity);
-  }
+  survivalTime += deltaTime / 1000; 
+  scoreMultiplier = 1 + survivalTime * 0.2; 
+  score += scoreMultiplier * (deltaTime / 1000); 
 
 
 
@@ -69,7 +70,7 @@ function gameScreen() {
   function cameraDown() {
     if (bollObj.y < 300) {
       for (let platform of platforms) {
-        platform.y += 5; // Move platforms down
+        platform.y += 5; 
       }
     }
   }
@@ -119,3 +120,6 @@ function draw() {
   }
   
 }
+
+
+
