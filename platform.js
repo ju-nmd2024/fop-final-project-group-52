@@ -5,14 +5,15 @@ export default class Platform {
         this.width = 70;
         this.height = 15;
         this.speed = 0;
-        this.breakable = false;
+        this.brittle = random() < 0.3;
+        this.broken = false;
 
 
      
         if (random() < 0.9) {
-            this.breakable = true;
+            this.brittle = true;
         } else {
-            this.breakable = false;
+            this.brittle = false;
         }
 
         if (random() < 0.5) {
@@ -28,11 +29,10 @@ export default class Platform {
             this.speed *= -1;
         }
 
-        if (this.breakable) {
-            fill(255, 0, 0); // Different color for breakable platforms
-          } else {
-            fill(0, 255, 0);
-          }
-          rect(this.x, this.y, this.width, this.height);
+        if (this.broken) return; 
+
+        fill(this.brittle ? 'red' : 'green'); 
+        rect(this.x, this.y, this.width, this.height);
+          
     }
 }

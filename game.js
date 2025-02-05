@@ -6,7 +6,7 @@ let gap;
 let score = 0;
 let platforms = [];
 let state = "start";
-let survivalTime = 0; 
+let survivalTime = 0; // New variable to track time survived
 
 function setup() {
   createCanvas(500, 650);
@@ -50,9 +50,9 @@ function gameScreen() {
   }
 
   
-  survivalTime += deltaTime / 1000; 
-  scoreMultiplier = 1 + survivalTime * 0.2; 
-  score += scoreMultiplier * (deltaTime / 1000); 
+  survivalTime += deltaTime / 1000; // Convert ms to seconds
+  scoreMultiplier = 1 + survivalTime * 0.2; // Score grows faster the longer you last
+  score += scoreMultiplier * (deltaTime / 1000); // Increase score over time
 
 
 
@@ -70,7 +70,7 @@ function gameScreen() {
   function cameraDown() {
     if (bollObj.y < 300) {
       for (let platform of platforms) {
-        platform.y += 5; 
+        platform.y += 5; // Move platforms down
       }
     }
   }
@@ -120,6 +120,3 @@ function draw() {
   }
   
 }
-
-
-
