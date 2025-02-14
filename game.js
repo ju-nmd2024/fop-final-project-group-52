@@ -1,4 +1,4 @@
-import Platform from "./platfrom.js";
+import Platform from "./platform.js";
 import doodler from "./doodler.js";
 
 let bollObj;
@@ -7,7 +7,7 @@ let score = 0;
 let platforms = [];
 let state = "start";
 let survivalTime = 0; 
-
+let scoreMultiplier = 1;
 
 
 
