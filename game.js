@@ -8,6 +8,10 @@ let platforms = [];
 let state = "start";
 let survivalTime = 0; 
 
+
+
+setup();
+
 function setup() {
   createCanvas(500, 650);
 
@@ -18,7 +22,7 @@ function setup() {
     gap = height / numbPlatforms;
     for (let i = 1; i < 6; i++) {
       let brittle = random() < 0.3;
-      platforms.push(new Platform(random(width), height - i*gap));     
+      platforms.push(new Platform(random(width), height - i*gap, brittle));     
     }
 }
 
@@ -30,6 +34,7 @@ function startScreen() {
   text("Press Enter to Start", 300, 300);
   if (keyIsDown(ENTER)) {
     state = "game";
+    
   }
 }
 
