@@ -25,6 +25,10 @@ export default class doodler {
       this.x += 8;
     }
 
+window.keyIsDown = keyIsDown;
+window.LEFT_ARROW = LEFT_ARROW;
+window.RIGHT_ARROW = RIGHT_ARROW;
+
     if (this.x + this.width < 0) this.x = width;
     if (this.x > width) this.x = -this.width;
 
