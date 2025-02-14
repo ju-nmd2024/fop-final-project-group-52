@@ -10,7 +10,7 @@ let survivalTime = 0;
 
 
 
-setup();
+
 
 function setup() {
   createCanvas(500, 650);
@@ -25,6 +25,8 @@ function setup() {
       platforms.push(new Platform(random(width), height - i*gap, brittle));     
     }
 }
+
+window.setup = setup;
 
 function startScreen() {
   background(0);
@@ -128,3 +130,5 @@ function draw() {
   }
   
 }
+
+window.draw = draw;
