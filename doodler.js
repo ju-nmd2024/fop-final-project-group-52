@@ -5,7 +5,7 @@ export default class doodler {
     this.height = 40;
     this.width = 40;
     this.velocity = 0;
-    this.gravity = 0.3;
+    this.gravity = 0.2,8;
     this.jumpForce = 8;
   }
 
