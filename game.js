@@ -58,10 +58,11 @@ function gameScreen() {
   }
 
   
-  survivalTime += deltaTime / 1000; // Convert ms to seconds
-  scoreMultiplier = 1 + survivalTime * 0.2; // Score grows faster the longer you last
+  if (bollObj.y < 300) {
+    survivalTime += deltaTime / 1000; // Convert ms to seconds
+  scoreMultiplier = 1 + survivalTime * 3; // Score grows faster the longer you last
   score += scoreMultiplier * (deltaTime / 1000); // Increase score over time
-
+  }
 
 
 
